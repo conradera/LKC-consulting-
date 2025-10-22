@@ -289,6 +289,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 120px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
     color: var(--white);
     overflow: hidden;
@@ -1498,7 +1499,7 @@ body {
 
     /* Hero Section */
     .hero {
-        padding: 3rem 0;
+        padding: 8rem 0 3rem 0;
     }
 
     .hero-title {
@@ -1710,7 +1711,7 @@ body {
 
     /* Hero Section */
     .hero {
-        padding: 2rem 0;
+        padding: 7rem 0 2rem 0;
     }
 
     .hero-stats {

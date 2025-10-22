@@ -117,14 +117,56 @@ const translations = {
             subtitle: "Start Your Journey",
             title: "Let's Explore Your<br />Next Opportunity Together",
             description: "Whether you're in early exploration or ready to take concrete steps, we're here to listen and guide. No pressure, just partnership.",
-            getInTouch: "Get in Touch",
-            sendMessage: "Send Message",
-            success: "Message sent successfully! We'll respond within 24 hours."
+            info: {
+                title: "Get in Touch",
+                description: "We typically respond within 24 hours. For urgent matters, please call us directly. All initial consultations are confidential and non-binding."
+            },
+            details: {
+                email: "Email",
+                phone: "Phone",
+                office: "Office",
+                location: "Tokyo, Japan",
+                addressNote: "(Exact address shared after initial consultation)"
+            },
+            hours: {
+                title: "Business Hours",
+                weekdays: "Monday – Friday: 9:00 AM – 6:00 PM JST",
+                weekends: "Weekend consultations available by appointment"
+            },
+            form: {
+                name: "Name *",
+                namePlaceholder: "Tanaka Taro",
+                company: "Company Name *",
+                companyPlaceholder: "ABC Corporation",
+                email: "Email Address *",
+                emailPlaceholder: "tanaka@example.com",
+                phone: "Phone Number",
+                phonePlaceholder: "+81-90-xxxx-xxxx (optional)",
+                message: "Message *",
+                messagePlaceholder: "Tell us about your business, expansion interests, timeline, or any specific questions...",
+                submit: "Send Message",
+                disclaimer: "By submitting, you agree to our privacy policy. We will not share your information with third parties."
+            }
         },
         footer: {
             privacy: "Privacy Policy",
             terms: "Terms of Service",
-            contact: "Contact"
+            contact: "Contact",
+            description: "Your trusted Business Producer for Africa and Southeast Asia market expansion. From Tokyo to the world, we walk alongside your ambitions.",
+            services: {
+                title: "Services",
+                research: "Market Research",
+                planning: "Strategic Planning",
+                matching: "Partner Matching",
+                grant: "Grant Support"
+            },
+            regions: {
+                title: "Regions",
+                eastAfrica: "East Africa",
+                westAfrica: "West Africa",
+                southernAfrica: "Southern Africa",
+                southeastAsia: "Southeast Asia"
+            }
         },
         toast: {
             success: "Message sent successfully! We'll respond within 24 hours."
@@ -138,7 +180,7 @@ const translations = {
             language: "JP"
         },
         hero: {
-            title: "あなたのグローバルな挑戦に伴走するビジネスプロデューサーです",
+            title: "あなたのグローバルな挑戦に伴走する<br />ビジネスプロデューサーです",
             description: "日本企業のアフリカ・東南アジア進出を、リサーチからビジネス実行まで一貫して支援します。",
             cta: {
                 plan: "一緒に計画を立てましょう",
@@ -173,7 +215,7 @@ const translations = {
         solution: {
             subtitle: "ソリューション",
             title: "あなたのビジョンと実行をつなぐ架け橋に",
-            description: "LKCコンサルティングは単なるコンサルではなく、あなたの"ビジネスプロデューサー"として、リサーチから現地展開まで伴走します。",
+            description: "LKCコンサルティングは単なるコンサルではなく、あなたの\"ビジネスプロデューサー\"として、リサーチから現地展開まで伴走します。",
             quote: "コンサルタントは地図を渡す。プロデューサーは共に歩む。",
             features: {
                 intelligence: "市場調査・情報分析",
@@ -287,21 +329,52 @@ const translations = {
                 title: "お問い合わせ",
                 description: "通常24時間以内にご返信いたします。緊急の場合は、直接お電話ください。すべての初期相談は機密保持され、拘束力はありません。"
             },
+            details: {
+                email: "メール",
+                phone: "電話",
+                office: "オフィス",
+                location: "東京、日本",
+                addressNote: "（正確な住所は初回相談後にお知らせします）"
+            },
+            hours: {
+                title: "営業時間",
+                weekdays: "月曜日〜金曜日：9:00 AM〜6:00 PM JST",
+                weekends: "週末の相談は予約制で可能です"
+            },
             form: {
                 name: "お名前 *",
+                namePlaceholder: "田中太郎",
                 company: "会社名 *",
+                companyPlaceholder: "ABC株式会社",
                 email: "メールアドレス *",
+                emailPlaceholder: "tanaka@example.com",
                 phone: "電話番号",
+                phonePlaceholder: "+81-90-xxxx-xxxx（任意）",
                 message: "メッセージ *",
+                messagePlaceholder: "ビジネス、進出の関心、タイムライン、または具体的なご質問についてお聞かせください...",
                 submit: "メッセージを送信",
                 disclaimer: "送信することで、プライバシーポリシーに同意したものとみなされます。第三者と情報を共有することはありません。"
-            },
-            success: "メッセージが送信されました。24時間以内にご返信いたします。"
+            }
         },
         footer: {
             privacy: "プライバシーポリシー",
             terms: "利用規約",
-            contact: "お問い合わせ"
+            contact: "お問い合わせ",
+            description: "アフリカと東南アジア市場拡大のための信頼できるビジネスプロデューサー。東京から世界へ、あなたの野望に寄り添います。",
+            services: {
+                title: "サービス",
+                research: "市場調査",
+                planning: "戦略立案",
+                matching: "パートナーマッチング",
+                grant: "補助金サポート"
+            },
+            regions: {
+                title: "地域",
+                eastAfrica: "東アフリカ",
+                westAfrica: "西アフリカ",
+                southernAfrica: "南部アフリカ",
+                southeastAsia: "東南アジア"
+            }
         },
         toast: {
             success: "メッセージが送信されました。24時間以内にご返信いたします。"
@@ -313,8 +386,10 @@ const translations = {
 let currentLanguage = 'en';
 
 function translatePage(language) {
+    console.log('translatePage called with language:', language);
     currentLanguage = language;
     const elements = document.querySelectorAll('[data-i18n]');
+    console.log('Found elements with data-i18n:', elements.length);
     
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -328,17 +403,31 @@ function translatePage(language) {
             } else {
                 element.innerHTML = translation;
             }
+        } else {
+            console.warn('No translation found for key:', key, 'in language:', language);
+        }
+    });
+    
+    // Handle placeholder translations separately
+    const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const translation = getTranslation(key, language);
+        if (translation) {
+            element.placeholder = translation;
         }
     });
     
     // Update language toggle buttons
     const languageButtons = document.querySelectorAll('#language-toggle span, #mobile-language-toggle span');
+    console.log('Language toggle buttons found:', languageButtons.length);
     languageButtons.forEach(button => {
         button.textContent = language === 'en' ? 'EN' : 'JP';
     });
     
     // Update document language attribute
     document.documentElement.lang = language;
+    console.log('Translation completed for language:', language);
 }
 
 function getTranslation(key, language) {
@@ -357,7 +446,9 @@ function getTranslation(key, language) {
 }
 
 function toggleLanguage() {
+    console.log('toggleLanguage called, current language:', currentLanguage);
     const newLanguage = currentLanguage === 'en' ? 'ja' : 'en';
+    console.log('Switching to language:', newLanguage);
     translatePage(newLanguage);
     
     // Store language preference
@@ -366,6 +457,8 @@ function toggleLanguage() {
 
 // Initialize translation system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Initializing translation system');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    console.log('Saved language preference:', savedLanguage);
     translatePage(savedLanguage);
 });
