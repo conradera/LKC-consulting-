@@ -411,25 +411,22 @@ body {
     margin-bottom: 4rem;
 }
 
-.empathy-card {
+.empathy-item {
     background-color: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-}
-
-.empathy-card:hover {
-    box-shadow: var(--shadow-md);
-}
-
-.empathy-card-content {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 }
 
-.empathy-card-icon {
+.empathy-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.empathy-icon {
     flex-shrink: 0;
     width: 3rem;
     height: 3rem;
@@ -440,19 +437,19 @@ body {
     justify-content: center;
 }
 
-.empathy-card-icon i {
+.empathy-icon i {
     color: var(--accent-color);
     font-size: 1.5rem;
 }
 
-.empathy-card-text h3 {
+.empathy-text h3 {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
-.empathy-card-text p {
+.empathy-text p {
     color: var(--text-secondary);
     line-height: 1.6;
 }
