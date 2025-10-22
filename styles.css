@@ -246,6 +246,42 @@ body {
     margin: 0 1rem;
 }
 
+/* Language Toggle Button */
+.language-toggle {
+    background: none;
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.language-toggle:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav.scrolled .language-toggle {
+    color: var(--gray-700);
+    border-color: var(--gray-700);
+}
+
+.nav.scrolled .language-toggle:hover {
+    color: var(--accent-color);
+    background-color: var(--light-bg);
+    border-color: var(--accent-color);
+}
+
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -1838,6 +1874,12 @@ body {
     .nav-mobile-link {
         padding: 0.75rem 0;
         font-size: 0.9rem;
+    }
+    
+    .language-toggle {
+        margin: 0.5rem 1rem;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
     }
 }
 

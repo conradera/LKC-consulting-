@@ -1,3 +1,95 @@
+// Translation data
+const translations = {
+    en: {
+        nav: {
+            process: "Our Process",
+            contact: "Contact",
+            getStarted: "Get Started",
+            language: "EN"
+        },
+        hero: {
+            title: "Guiding Global Ambitions with Local Insight",
+            description: "Empowering Japanese businesses to expand confidently into Africa & Southeast Asia — from initial research to on-ground execution.",
+            cta: {
+                plan: "Let's Plan Together",
+                learn: "Learn Our Approach"
+            }
+        }
+    },
+    ja: {
+        nav: {
+            process: "私たちのアプローチ",
+            contact: "お問い合わせ",
+            getStarted: "始める",
+            language: "JP"
+        },
+        hero: {
+            title: "あなたのグローバルな挑戦に伴走するビジネスプロデューサーです",
+            description: "日本企業のアフリカ・東南アジア進出を、リサーチからビジネス実行まで一貫して支援します。",
+            cta: {
+                plan: "一緒に計画を立てましょう",
+                learn: "私たちのアプローチを見る"
+            }
+        }
+    }
+};
+
+// Current language state
+let currentLanguage = 'en';
+
+// Translation functionality
+function translatePage(language) {
+    currentLanguage = language;
+    const elements = document.querySelectorAll('[data-i18n]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getTranslation(key, language);
+        
+        if (translation) {
+            if (element.tagName === 'INPUT' && element.type === 'submit') {
+                element.value = translation;
+            } else if (element.hasAttribute('placeholder')) {
+                element.placeholder = translation;
+            } else {
+                element.innerHTML = translation;
+            }
+        }
+    });
+    
+    // Update language toggle buttons
+    const languageButtons = document.querySelectorAll('#language-toggle span, #mobile-language-toggle span');
+    languageButtons.forEach(button => {
+        button.textContent = translations[language].nav.language;
+    });
+    
+    // Update document language attribute
+    document.documentElement.lang = language;
+}
+
+function getTranslation(key, language) {
+    const keys = key.split('.');
+    let translation = translations[language];
+    
+    for (const k of keys) {
+        if (translation && translation[k]) {
+            translation = translation[k];
+        } else {
+            return null;
+        }
+    }
+    
+    return translation;
+}
+
+function toggleLanguage() {
+    const newLanguage = currentLanguage === 'en' ? 'ja' : 'en';
+    translatePage(newLanguage);
+    
+    // Store language preference
+    localStorage.setItem('preferredLanguage', newLanguage);
+}
+
 // Optimized navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Cache DOM elements
@@ -234,6 +326,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize only essential animations
     setupAnimations();
     setupCounterAnimation();
+    
+    // Initialize translation system
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    translatePage(savedLanguage);
 });
 
 // Global functions for onclick handlers
