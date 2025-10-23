@@ -108,7 +108,7 @@ const translations = {
         trackRecord: {
             subtitle: "Proven Track Record",
             title: "Partnership Success Stories",
-            description: "Real projects with Japanese companies across diverse industries and regions. (Details anonymized for client confidentiality.)",
+            description: "Real projects with Japanese companies across diverse industries and regions.<br />(Details anonymized for client confidentiality.)",
             disclaimer: "Client confidentiality is paramount. These case studies represent real engagements with identifying details modified. Detailed references available upon NDA execution.",
             cases: {
                 manufacturing: {
@@ -260,7 +260,7 @@ const translations = {
         empathy: {
             subtitle: "よく寄せられる課題",
             title: "海外展開は、もっと簡単であるべきです",
-            description: "新興国進出において、多くの日本企業が同じ壁に直面しています。あなたは一人ではありません。私たちがその突破口を一緒に見つけます。",
+            description: "新興国進出において、多くの日本企業が同じ壁に直面しています。<br />あなたは一人ではありません。私たちがその突破口を一緒に見つけます。",
             challenges: {
                 intelligence: "信頼できる市場情報が得られない",
                 intelligenceDesc: "アフリカ・東南アジア市場の信頼できる最新情報へのアクセスに苦労している。",
@@ -322,7 +322,7 @@ const translations = {
         process: {
             subtitle: "私たちのアプローチ",
             title: "6ステップの伴走プロセス",
-            description: "みなさんのビジネスは唯一無二です。貴社のニーズとスケジュールに合わせて柔軟に対応しますのでご安心ください。",
+            description: "みなさんのビジネスは唯一無二です。<br />貴社のニーズとスケジュールに合わせて柔軟に対応しますのでご安心ください。",
             steps: {
                 research: "市場調査と仮説立案",
                 researchDesc: "ターゲット地域での深い市場分析、競合他社のマッピング、機会の特定を行います。",
@@ -345,7 +345,7 @@ const translations = {
         trackRecord: {
             subtitle: "実績",
             title: "パートナーシップ成功事例",
-            description: "多様な業界と地域で日本企業との実際のプロジェクト。（クライアントの機密保持のため詳細は匿名化されています。）",
+            description: "多様な業界と地域で日本企業との実際のプロジェクト。<br />（クライアントの機密保持のため詳細は匿名化されています。）",
             disclaimer: "クライアントの機密保持は最優先事項です。これらの事例は実際の案件を基にしており、特定情報は変更されています。詳細なリファレンスは、NDA（秘密保持契約）締結後に提供可能です。",
             cases: {
                 manufacturing: {
