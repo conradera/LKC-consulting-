@@ -480,11 +480,8 @@ const translations = {
 let currentLanguage = 'en';
 
 function translatePage(language) {
-    console.log('translatePage called with language:', language);
     currentLanguage = language;
     const elements = document.querySelectorAll('[data-i18n]');
-    console.log('Found elements with data-i18n:', elements.length);
-    console.log('Current translations object:', translations);
     
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -498,9 +495,8 @@ function translatePage(language) {
             } else {
                 element.innerHTML = translation;
             }
-            console.log('Translated:', key, 'to:', translation);
         } else {
-            console.warn('No translation found for key:', key, 'in language:', language);
+            // Translation not found - element will keep its default text
         }
     });
     
@@ -516,54 +512,42 @@ function translatePage(language) {
     
     // Update language toggle buttons
     const languageButtons = document.querySelectorAll('#language-toggle span, #mobile-language-toggle span');
-    console.log('Language toggle buttons found:', languageButtons.length);
     languageButtons.forEach(button => {
         button.textContent = language === 'en' ? 'EN' : 'JP';
     });
     
     // Update document language attribute
     document.documentElement.lang = language;
-    console.log('Translation completed for language:', language);
 }
 
 function getTranslation(key, language) {
-    console.log('getTranslation called with key:', key, 'language:', language);
     const keys = key.split('.');
     let translation = translations[language];
-    console.log('Starting translation lookup for keys:', keys);
     
     for (const k of keys) {
         if (translation && translation[k]) {
             translation = translation[k];
-            console.log('Found key:', k, 'value:', translation);
         } else {
-            console.warn('Missing key:', k, 'in translation path');
             return null;
         }
     }
     
-    console.log('Final translation result:', translation);
     return translation;
 }
 
 function toggleLanguage() {
-    console.log('toggleLanguage called, current language:', currentLanguage);
     const newLanguage = currentLanguage === 'en' ? 'ja' : 'en';
-    console.log('Switching to language:', newLanguage);
     currentLanguage = newLanguage;
-    console.log('Updated currentLanguage to:', currentLanguage);
     translatePage(newLanguage);
     
     // Store language preference
     localStorage.setItem('preferredLanguage', newLanguage);
-    console.log('Language preference saved to localStorage:', newLanguage);
 }
 
 // Initialize translation system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded - Initializing translation system');
-    // Always start with English by default
-    currentLanguage = 'en';
-    console.log('Starting with English by default');
-    translatePage('en');
+    // Check for saved language preference
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    currentLanguage = savedLanguage || 'en';
+    translatePage(currentLanguage);
 });

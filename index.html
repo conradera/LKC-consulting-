@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LKC Consulting - Business Producer for Africa & Southeast Asia</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     </head>
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="nav-content">
                 <!-- Logo -->
-                <a href="#" class="nav-logo" id="nav-logo">
+                <a href="#" class="nav-logo" id="nav-logo" aria-label="LKC Consulting Home">
                     <span class="logo-accent">LKC</span> Consulting
                 </a>
 
@@ -29,13 +29,13 @@
         </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="nav-mobile-toggle" id="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
+                <button class="nav-mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
 
         <!-- Mobile Menu -->
-        <div class="nav-mobile" id="mobile-menu">
+        <div class="nav-mobile" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
             <button class="nav-mobile-link" onclick="scrollToSection('process')" data-i18n="nav.process">Our Process</button>
             <button class="nav-mobile-link" onclick="scrollToSection('contact')" data-i18n="nav.contact">Contact</button>
             <button class="btn btn-primary nav-mobile-btn" onclick="scrollToSection('contact')" data-i18n="nav.getStarted">Get Started</button>
@@ -753,30 +753,30 @@
 
                     <!-- Contact Form -->
                     <div class="contact-form-container">
-                        <form class="contact-form" id="contact-form">
+                        <form class="contact-form" id="contact-form" novalidate>
                             <div class="form-group">
                                 <label for="name" data-i18n="contact.form.name">Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Tanaka Taro" data-i18n-placeholder="contact.form.namePlaceholder">
+                                <input type="text" id="name" name="name" required minlength="2" maxlength="100" placeholder="Tanaka Taro" data-i18n-placeholder="contact.form.namePlaceholder" autocomplete="name">
                             </div>
 
                             <div class="form-group">
                                 <label for="company" data-i18n="contact.form.company">Company Name *</label>
-                                <input type="text" id="company" name="company" required placeholder="ABC Corporation" data-i18n-placeholder="contact.form.companyPlaceholder">
+                                <input type="text" id="company" name="company" required minlength="2" maxlength="100" placeholder="ABC Corporation" data-i18n-placeholder="contact.form.companyPlaceholder" autocomplete="organization">
                             </div>
 
                             <div class="form-group">
                                 <label for="email" data-i18n="contact.form.email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="tanaka@example.com" data-i18n-placeholder="contact.form.emailPlaceholder">
+                                <input type="email" id="email" name="email" required maxlength="254" placeholder="tanaka@example.com" data-i18n-placeholder="contact.form.emailPlaceholder" autocomplete="email">
                             </div>
 
                             <div class="form-group">
                                 <label for="phone" data-i18n="contact.form.phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+81-90-xxxx-xxxx (optional)" data-i18n-placeholder="contact.form.phonePlaceholder">
+                                <input type="tel" id="phone" name="phone" maxlength="20" placeholder="+81-90-xxxx-xxxx (optional)" data-i18n-placeholder="contact.form.phonePlaceholder" autocomplete="tel">
                             </div>
 
                             <div class="form-group">
                                 <label for="message" data-i18n="contact.form.message">Message *</label>
-                                <textarea id="message" name="message" required rows="5" placeholder="Tell us about your business, expansion interests, timeline, or any specific questions..." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+                                <textarea id="message" name="message" required minlength="10" maxlength="2000" rows="5" placeholder="Tell us about your business, expansion interests, timeline, or any specific questions..." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
