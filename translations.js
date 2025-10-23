@@ -100,11 +100,35 @@ const translations = {
             subtitle: "Proven Track Record",
             title: "Partnership Success Stories",
             description: "Real projects with Japanese companies across diverse industries and regions. (Details anonymized for client confidentiality.)",
+            disclaimer: "Client confidentiality is paramount. These case studies represent real engagements with identifying details modified. Detailed references available upon NDA execution.",
             cases: {
                 manufacturing: "Factory Equipment Distribution",
                 fmcg: "FMCG Market Entry",
                 agritech: "AgriTech Partnership",
                 energy: "Renewable Energy Infrastructure"
+            },
+            outcomes: {
+                label: "Key Outcomes:",
+                manufacturing: {
+                    item1: "3 local distributors secured",
+                    item2: "Market entry in 18 months",
+                    item3: "Grant funding support"
+                },
+                fmcg: {
+                    item1: "Retail network established",
+                    item2: "Regulatory approval obtained",
+                    item3: "Pilot stores launched"
+                },
+                agritech: {
+                    item1: "2 pilot projects launched",
+                    item2: "Government MoU signed",
+                    item3: "Local team recruited"
+                },
+                energy: {
+                    item1: "Feasibility completed",
+                    item2: "Investor network activated",
+                    item3: "JV discussions initiated"
+                }
             }
         },
         team: {
@@ -149,24 +173,26 @@ const translations = {
             }
         },
         footer: {
-            privacy: "Privacy Policy",
-            terms: "Terms of Service",
-            contact: "Contact",
+            company: "LKC Consulting",
             description: "Your trusted Business Producer for Africa and Southeast Asia market expansion. From Tokyo to the world, we walk alongside your ambitions.",
             services: {
                 title: "Services",
                 research: "Market Research",
                 planning: "Strategic Planning",
                 matching: "Partner Matching",
-                grant: "Grant Support"
+                support: "Grant Support"
             },
             regions: {
                 title: "Regions",
                 eastAfrica: "East Africa",
                 westAfrica: "West Africa",
-                southernAfrica: "Southern Africa",
+                southAfrica: "Southern Africa",
                 southeastAsia: "Southeast Asia"
-            }
+            },
+            copyright: "© 2025 LKC Consulting. All rights reserved.",
+            privacy: "Privacy Policy",
+            terms: "Terms of Service",
+            contact: "Contact"
         },
         toast: {
             success: "Message sent successfully! We'll respond within 24 hours."
@@ -281,6 +307,7 @@ const translations = {
             subtitle: "実績",
             title: "パートナーシップ成功事例",
             description: "多様な業界と地域で日本企業との実際のプロジェクト。（クライアントの機密保持のため詳細は匿名化されています。）",
+            disclaimer: "クライアントの機密保持は最優先事項です。これらの事例は実際の案件を基にしており、特定情報は変更されています。詳細なリファレンスは、NDA（秘密保持契約）締結後に提供可能です。",
             cases: {
                 manufacturing: {
                     title: "製造業 / 工場機器ディストリビューション支援",
@@ -297,6 +324,29 @@ const translations = {
                 energy: {
                     title: "再生可能エネルギー事業支援",
                     description: "ザンビアとモザンビークでの太陽光エネルギー事業の実現可能性調査とステークホルダーエンゲージメントを促進。"
+                }
+            },
+            outcomes: {
+                label: "主要な成果：",
+                manufacturing: {
+                    item1: "3社の現地ディストリビューターを確保",
+                    item2: "18か月以内に市場参入",
+                    item3: "助成金支援獲得"
+                },
+                fmcg: {
+                    item1: "小売ネットワークを確立",
+                    item2: "規制当局の承認を取得",
+                    item3: "パイロット店舗を開設"
+                },
+                agritech: {
+                    item1: "2件のパイロットプロジェクトを開始",
+                    item2: "政府とのMOU（覚書）を締結",
+                    item3: "現地チームを採用"
+                },
+                energy: {
+                    item1: "フィージビリティ調査を完了",
+                    item2: "投資家ネットワークを活性化",
+                    item3: "合弁事業（JV）協議を開始"
                 }
             }
         },
@@ -357,24 +407,26 @@ const translations = {
             }
         },
         footer: {
-            privacy: "プライバシーポリシー",
-            terms: "利用規約",
-            contact: "お問い合わせ",
-            description: "アフリカと東南アジア市場拡大のための信頼できるビジネスプロデューサー。東京から世界へ、あなたの野望に寄り添います。",
+            company: "LKCコンサルティング",
+            description: "アフリカ・東南アジア市場拡大の信頼できるビジネスプロデューサー。東京から世界へ、あなたの野望に寄り添います。",
             services: {
                 title: "サービス",
                 research: "市場調査",
                 planning: "戦略立案",
                 matching: "パートナーマッチング",
-                grant: "補助金サポート"
+                support: "助成金支援"
             },
             regions: {
                 title: "地域",
                 eastAfrica: "東アフリカ",
                 westAfrica: "西アフリカ",
-                southernAfrica: "南部アフリカ",
+                southAfrica: "南アフリカ",
                 southeastAsia: "東南アジア"
-            }
+            },
+            copyright: "© 2025 LKCコンサルティング。全著作権所有。",
+            privacy: "プライバシーポリシー",
+            terms: "利用規約",
+            contact: "お問い合わせ"
         },
         toast: {
             success: "メッセージが送信されました。24時間以内にご返信いたします。"
@@ -390,6 +442,7 @@ function translatePage(language) {
     currentLanguage = language;
     const elements = document.querySelectorAll('[data-i18n]');
     console.log('Found elements with data-i18n:', elements.length);
+    console.log('Current translations object:', translations);
     
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -403,6 +456,7 @@ function translatePage(language) {
             } else {
                 element.innerHTML = translation;
             }
+            console.log('Translated:', key, 'to:', translation);
         } else {
             console.warn('No translation found for key:', key, 'in language:', language);
         }
@@ -431,17 +485,22 @@ function translatePage(language) {
 }
 
 function getTranslation(key, language) {
+    console.log('getTranslation called with key:', key, 'language:', language);
     const keys = key.split('.');
     let translation = translations[language];
+    console.log('Starting translation lookup for keys:', keys);
     
     for (const k of keys) {
         if (translation && translation[k]) {
             translation = translation[k];
+            console.log('Found key:', k, 'value:', translation);
         } else {
+            console.warn('Missing key:', k, 'in translation path');
             return null;
         }
     }
     
+    console.log('Final translation result:', translation);
     return translation;
 }
 
@@ -449,16 +508,20 @@ function toggleLanguage() {
     console.log('toggleLanguage called, current language:', currentLanguage);
     const newLanguage = currentLanguage === 'en' ? 'ja' : 'en';
     console.log('Switching to language:', newLanguage);
+    currentLanguage = newLanguage;
+    console.log('Updated currentLanguage to:', currentLanguage);
     translatePage(newLanguage);
     
     // Store language preference
     localStorage.setItem('preferredLanguage', newLanguage);
+    console.log('Language preference saved to localStorage:', newLanguage);
 }
 
 // Initialize translation system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded - Initializing translation system');
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    console.log('Saved language preference:', savedLanguage);
-    translatePage(savedLanguage);
+    // Always start with English by default
+    currentLanguage = 'en';
+    console.log('Starting with English by default');
+    translatePage('en');
 });
