@@ -88,25 +88,48 @@ const translations = {
             description: "A structured yet flexible approach that walks alongside your business from curiosity to sustainable market presence.",
             steps: {
                 research: "Research & Discovery",
+                researchDesc: "Deep-dive market analysis, competitor mapping, and opportunity identification across target regions.",
                 planning: "Strategic Planning",
-                onsite: "On-Site Support",
+                planningDesc: "Co-create entry strategies, business models, and risk mitigation plans aligned with your capabilities.",
+                support: "On-Site Support",
+                supportDesc: "Accompany you on market visits, facilitate meetings, and provide real-time cultural and business navigation.",
                 matching: "Business Matching",
+                matchingDesc: "Connect you with pre-vetted local partners, distributors, and stakeholders from our trusted network.",
                 implementation: "Implementation",
-                pdca: "PDCA Optimization"
+                implementationDesc: "Support operational setup, negotiations, contract development, and initial market activation.",
+                optimization: "PDCA Optimization",
+                optimizationDesc: "Continuous monitoring, feedback loops, and adaptive improvements to ensure sustainable growth."
             },
-            cta: "Every business is unique. We adapt this framework to your specific needs, timeline, and ambitions."
+            cta: {
+                unique: "Every business is unique. We adapt this framework to your specific needs, timeline, and ambitions.",
+                discuss: "Let's discuss how this process can work for you."
+            }
         },
-        caseStudies: {
+        trackRecord: {
             subtitle: "Proven Track Record",
             title: "Partnership Success Stories",
             description: "Real projects with Japanese companies across diverse industries and regions. (Details anonymized for client confidentiality.)",
             disclaimer: "Client confidentiality is paramount. These case studies represent real engagements with identifying details modified. Detailed references available upon NDA execution.",
             cases: {
-                manufacturing: "Factory Equipment Distribution",
-                fmcg: "FMCG Market Entry",
-                agritech: "AgriTech Partnership",
-                energy: "Renewable Energy Infrastructure"
-            },
+                manufacturing: {
+                    title: "Factory Equipment Distribution",
+                    description: "Supported a Japanese machinery manufacturer in establishing distribution partnerships across Kenya, Tanzania, and Ethiopia."
+                },
+                fmcg: {
+                    title: "FMCG Market Entry",
+                    description: "Guided a Japanese food products company through regulatory, logistics, and retail partnership development in Philippines and Vietnam."
+                },
+                agritech: {
+                    title: "AgriTech Partnership",
+                    description: "Connected a Japanese agtech startup with farming cooperatives and government agencies in Ghana and Nigeria."
+                },
+                energy: {
+                    title: "Renewable Energy Infrastructure",
+                    description: "Facilitated feasibility studies and stakeholder engagement for solar energy projects in Zambia and Mozambique."
+                }
+            }
+        },
+        caseStudies: {
             outcomes: {
                 label: "Key Outcomes:",
                 manufacturing: {
@@ -129,13 +152,29 @@ const translations = {
                     item2: "Investor network activated",
                     item3: "JV discussions initiated"
                 }
-            }
+            },
+            disclaimer: "Client confidentiality is paramount. These case studies represent real engagements with identifying details modified. Detailed references available upon NDA execution."
         },
         team: {
             subtitle: "Our Team & Network",
             title: "Rooted in Tokyo,<br />Connected Globally",
             description: "LKC Consulting brings together Japanese business understanding, global market expertise, and deep local networks across Africa and Southeast Asia.",
-            philosophy: "Our Philosophy"
+            highlights: {
+                countries: "54 African Countries",
+                countriesDesc: "Network coverage across the entire continent, from Morocco to South Africa.",
+                tokyo: "Tokyo 2020 & Africa Travel",
+                tokyoDesc: "Affiliated with organizations connecting Japan and emerging markets through sports and tourism.",
+                jica: "JICA & Government Relations",
+                jicaDesc: "Experience supporting clients with public funding programs and government partnerships.",
+                multilingual: "Multilingual Team",
+                multilingualDesc: "Fluent in Japanese, English, French, Portuguese, and various Southeast Asian languages."
+            },
+            philosophy: {
+                title: "Our Philosophy",
+                description1: "We believe in <span class=\"text-accent\">honest counsel</span> over sales pressure. If Africa isn't the right fit for your business model, we'll tell you — and suggest alternatives like Southeast Asia or other markets. Our success is measured by your sustainable growth, not deal volume.",
+                description2: "Every team member has lived and worked across multiple continents, combining <span class=\"text-accent\">cross-cultural fluency</span> with practical business execution experience."
+            },
+            affiliations: "Affiliated with leading organizations connecting Japan to emerging markets through sports, culture, and business development initiatives."
         },
         contact: {
             subtitle: "Start Your Journey",
@@ -180,7 +219,7 @@ const translations = {
                 research: "Market Research",
                 planning: "Strategic Planning",
                 matching: "Partner Matching",
-                support: "Grant Support"
+                grant: "Grant Support"
             },
             regions: {
                 title: "Regions",
@@ -325,7 +364,9 @@ const translations = {
                     title: "再生可能エネルギー事業支援",
                     description: "ザンビアとモザンビークでの太陽光エネルギー事業の実現可能性調査とステークホルダーエンゲージメントを促進。"
                 }
-            },
+            }
+        },
+        caseStudies: {
             outcomes: {
                 label: "主要な成果：",
                 manufacturing: {
@@ -348,7 +389,8 @@ const translations = {
                     item2: "投資家ネットワークを活性化",
                     item3: "合弁事業（JV）協議を開始"
                 }
-            }
+            },
+            disclaimer: "クライアントの機密保持は最優先事項です。これらの事例は実際の案件を基にしており、特定情報は変更されています。詳細なリファレンスは、NDA（秘密保持契約）締結後に提供可能です。"
         },
         team: {
             subtitle: "チームとネットワーク",
@@ -414,7 +456,7 @@ const translations = {
                 research: "市場調査",
                 planning: "戦略立案",
                 matching: "パートナーマッチング",
-                support: "助成金支援"
+                grant: "助成金支援"
             },
             regions: {
                 title: "地域",
